@@ -28,14 +28,36 @@ CodeBehind="MainPage.aspx.cs" Inherits="FedexTestProject.Web.Views.MainPage" Asy
                 </asp:RequiredFieldValidator> 
             </p>
     </asp:Panel>
-    <asp:DataGrid id="TrackingInfoGrid"
-                  BorderColor="black"
-                  BorderWidth="1"
-                  CellPadding="3"
-                  AutoGenerateColumns="true"
-                  runat="server">
-        <HeaderStyle BackColor="#00aaaa">
-        </HeaderStyle>
-    </asp:DataGrid>
+    <asp:Panel ID= "GridPanel" runat = "server">
+        <asp:Button runat="server" id="ExportElsx" class="btn btn-primary" text="Export to excel" onclick="ExportXlsxButton_Click" />
+        <asp:Button runat="server" id="ExportTxt" class="btn btn-primary" text="Export to csv" onclick="ExportTxtButton_Click" />
+        <asp:DataGrid id="TrackingInfoGrid"
+                      BorderColor="black"
+                      BorderWidth="1"
+                      CellPadding="3"
+                      AutoGenerateColumns="true"
+                      runat="server">
+        </asp:DataGrid>
+    </asp:Panel>
     </div>
+
+    <asp:Panel Id="LockPanel" class="Lock" style="display:none" runat = "server">
+        Processing...
+    </asp:Panel>
+
+    <script type="text/javascript">
+        $(function () {
+            $('#<%=UploadButton.ClientID%>').click(function () {
+                $('#<%=LockPanel.ClientID%>').show();
+            });
+            $('#<%=ExportElsx.ClientID%>').click(function () {
+                $('#<%=LockPanel.ClientID%>').html('Exporting to xlsx...');
+                $('#<%=LockPanel.ClientID%>').show();
+            });
+            $('#<%=ExportTxt.ClientID%>').click(function () {
+                $('#<%=LockPanel.ClientID%>').html('Exporting to txt...');
+                $('#<%=LockPanel.ClientID%>').show();
+            });
+        });
+    </script>
 </asp:Content>

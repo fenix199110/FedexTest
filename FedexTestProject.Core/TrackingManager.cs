@@ -9,7 +9,7 @@ using Newtonsoft.Json;
 
 namespace FedexTestProject.Core
 {
-    public class TrackingManager : ITrackingManager
+    public class TrackingManager
     {
         public IMapper Mapper { get; set; }
 

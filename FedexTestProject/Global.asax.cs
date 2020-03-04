@@ -26,17 +26,30 @@ namespace FedexTestProject.Web
 
             // Build up your application container and register your dependencies.
             var builder = new ContainerBuilder();
-            builder.RegisterType<TrackingManager>().
-                As<ITrackingManager>().
-                InstancePerRequest().
-                PropertiesAutowired();
 
+            InitCoreDependencies(builder);
             InitAutomapper(builder);
             // ... continue registering dependencies...
 
             // Once you're done registering things, set the container
             // provider up with your registrations.
             _containerProvider = new ContainerProvider(builder.Build());
+        }
+
+        private void InitCoreDependencies(ContainerBuilder builder)
+        {
+            builder.RegisterType<TrackingManager>().
+                AsSelf().
+                InstancePerRequest().
+                PropertiesAutowired();
+            builder.RegisterType<TextFileProcessor>().
+                AsSelf().
+                InstancePerRequest().
+                PropertiesAutowired();
+            builder.RegisterType<XlsFileProcessor>().
+                AsSelf().
+                InstancePerRequest().
+                PropertiesAutowired();
         }
 
         private void InitAutomapper(ContainerBuilder builder)
