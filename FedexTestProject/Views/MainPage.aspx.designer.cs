@@ -7,13 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace FedexTestProject.Web.Views
-{
-
-
-    public partial class MainPage
-    {
-
+namespace FedexTestProject.Web.Views {
+    
+    
+    public partial class MainPage {
+        
         /// <summary>
         /// MainPanel control.
         /// </summary>
@@ -22,7 +20,7 @@ namespace FedexTestProject.Web.Views
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel MainPanel;
-
+        
         /// <summary>
         /// FileUploadControl control.
         /// </summary>
@@ -31,7 +29,7 @@ namespace FedexTestProject.Web.Views
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.FileUpload FileUploadControl;
-
+        
         /// <summary>
         /// UploadButton control.
         /// </summary>
@@ -40,7 +38,7 @@ namespace FedexTestProject.Web.Views
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button UploadButton;
-
+        
         /// <summary>
         /// FileUpLoadValidator control.
         /// </summary>
@@ -49,34 +47,52 @@ namespace FedexTestProject.Web.Views
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RegularExpressionValidator FileUpLoadValidator;
-
+        
         /// <summary>
-        /// RequiredFieldValidator control.
+        /// TrackNumberPanel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator;
-
+        protected global::System.Web.UI.WebControls.Panel TrackNumberPanel;
+        
         /// <summary>
-        /// GridPanel control.
+        /// ProcessTracking control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel GridPanel;
-
+        protected global::System.Web.UI.WebControls.Button ProcessTracking;
+        
         /// <summary>
-        /// ExportElsx control.
+        /// TrackingNumbersList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ExportElsx;
-
+        protected global::System.Web.UI.WebControls.ListView TrackingNumbersList;
+        
+        /// <summary>
+        /// TrackingInfoPanel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel TrackingInfoPanel;
+        
+        /// <summary>
+        /// ExportXlsx control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button ExportXlsx;
+        
         /// <summary>
         /// ExportTxt control.
         /// </summary>
@@ -85,7 +101,7 @@ namespace FedexTestProject.Web.Views
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button ExportTxt;
-
+        
         /// <summary>
         /// TrackingInfoGrid control.
         /// </summary>
@@ -93,8 +109,17 @@ namespace FedexTestProject.Web.Views
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DataGrid TrackingInfoGrid;
-
+        protected global::System.Web.UI.WebControls.GridView TrackingInfoGrid;
+        
+        /// <summary>
+        /// ErrorLbl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label ErrorLbl;
+        
         /// <summary>
         /// LockPanel control.
         /// </summary>

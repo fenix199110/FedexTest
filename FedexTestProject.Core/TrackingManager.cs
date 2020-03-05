@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
 using AutoMapper;
@@ -14,8 +15,21 @@ namespace FedexTestProject.Core
         public IMapper Mapper { get; set; }
 
         private const string TrackingUrl = "https://www.fedex.com/trackingCal/track";
+        private const int PageSize = 10; 
 
-        public async Task<List<TrackingPackage>> GetTrackingInfo(IEnumerable<string> trackingNumbers)
+        public async Task<List<TrackingPackage>> GetTrackingInfo(IList<string> trackingNumbers)
+        {
+            var result = new List<TrackingPackage>();
+            for (int i = 0; i < trackingNumbers.Count(); i = i + PageSize)
+            {
+                var items = await GetTrackingInfoChunk(trackingNumbers.Skip(i).Take(PageSize).ToList());
+                result.AddRange(items);
+            }
+
+            return result.OrderBy(r => r.TrackingStatus).ToList();
+        }
+
+        private async Task<List<TrackingPackage>> GetTrackingInfoChunk(IList<string> trackingNumbers)
         {
             var jsonData = JsonConvert.SerializeObject(new FedexTrackingRequest(trackingNumbers));
 
