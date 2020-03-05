@@ -86,8 +86,8 @@ CodeBehind="MainPage.aspx.cs" Inherits="FedexTestProject.Web.Views.MainPage" Asy
                 if (blockUI) {
                     $('#<%=LockPanel.ClientID%>').show();
                 }
-                if (!Page_IsValid && blockUI) {
-                    $('#<%=LockPanel.ClientID%>').Hide();
+                if (!Page_IsValid) {
+                    $('#<%=LockPanel.ClientID%>').hide();
                     e.stopPropagation();
                 }
             });
